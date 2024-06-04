@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rate Your Outfit</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+    <h1>Rate Your Outfit</h1>
+    <form action="#" th:action="@{/submitRating}" th:object="${rating}" method="post">
+        <label for="outfitName">Outfit Name:</label>
+        <input type="text" id="outfitName" name="outfitName" th:field="*{outfitName}" required><br><br>
+        
+        <label for="rating">Rating (1-5):</label>
+        <input type="number" id="rating" name="rating" th:field="*{rating}" min="1" max="5" required><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
